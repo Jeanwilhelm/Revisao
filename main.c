@@ -18,12 +18,40 @@ int main(int argc, char *argv[])
 		//laço que varre a coluna
 		for(k=0; k<4; k++)
 		{
-			//insere o valor randômico em uma posição da matriz
-			matriz[j][k] = rand()%50;
+			//insere o indice da coluna na matrix
+			matriz[j][k] = k;
 			//exibe o valor da posição atual da matrix
 			printf("%02d ", matriz[j][k]);
 		}
 		//quebra a linha a partir da quarta coluna
+		printf("\n");
+	}
+	
+	
+	// imprime uma mensagem de identificação
+	printf("\nOs elementos da Diagonal Principal sao: ");
+	// efetua a varredura da matriz
+	for(j=0; j<4; j++)
+	{
+		//imprime o resutado esperado
+		printf("%02d ", matriz[j][j]);
+	}
+	
+	
+	// imprime uma mensagem de identificação 
+	printf("\n\nOs demais elementos sao: \n");
+	//insere o indice da coluna na matrix
+	for(j=0; j<4; j++)
+	{
+		//exibe o valor da posição atual da matrix
+		for(k=0; k<4; k++)
+		{
+			//se os indices forem iguais(diagonal principal)
+			if (j == k) printf("-- ");
+			// senão exibe o valor da posição atual da matrix
+			else printf("%02d ", matriz[j][k]);
+		}
+		//quebra a linha
 		printf("\n");
 	}
 	//retorna 0
